@@ -40,12 +40,12 @@ namespace SA {
             if (origin != (states.mTransform.position + originOffset) && !IsSlave)
                 origin = states.mTransform.position + originOffset;
 
-            Hit = isHit(states.masterHitData);
+            Hit = isHit();
 
             if (!Hit && !hitData.Cleared)
             {
                 hitData.ClearData();
-                states.interactionData.ClearData();
+                
                 return;
             }
 
@@ -58,7 +58,7 @@ namespace SA {
             
         }
 
-        public bool isHit(EasyCastMasterData masterHitGather)
+        public bool isHit()
         {
             
             RaycastHit hit;
